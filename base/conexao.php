@@ -2,9 +2,9 @@
 
 //ambiente marcosvirgilio.online
 $servername = '127.0.0.1';
-$username = 'usuario';
-$password = 'senha';
-$dbname = 'schema';
+$username = 'root';
+$password = '';
+$dbname = 'db_livroowl';
 
 // Create connection
 $con = new mysqli($servername, $username, $password, $dbname);

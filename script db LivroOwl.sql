@@ -18,7 +18,7 @@ USE `db_livroowl` ;
 -- Table `db_livroowl`.`Livro`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `db_livroowl`.`Livro` (
-  `idLivro` INT NOT NULL,
+  `idLivro` INT AUTO_INCREMENT NOT NULL ,
   `nome` VARCHAR(45) NOT NULL,
   `ISBN` VARCHAR(45) NOT NULL,
   `anoPub` YEAR(4) NOT NULL,
@@ -31,7 +31,7 @@ ENGINE = InnoDB;
 -- Table `db_livroowl`.`Genero`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `db_livroowl`.`Genero` (
-  `idGenero` INT NOT NULL,
+  `idGenero` INT AUTO_INCREMENT NOT NULL,
   `nome` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`idGenero`))
 ENGINE = InnoDB;
@@ -51,7 +51,7 @@ ENGINE = InnoDB;
 -- Table `db_livroowl`.`Lista`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `db_livroowl`.`Lista` (
-  `idLista` INT NOT NULL,
+  `idLista` INT AUTO_INCREMENT NOT NULL,
   `nome` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`idLista`))
 ENGINE = InnoDB;
@@ -61,9 +61,9 @@ ENGINE = InnoDB;
 -- Table `db_livroowl`.`Avaliacao`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `db_livroowl`.`Avaliacao` (
-  `idAvaliacao` INT NOT NULL,
+  `idAvaliacao` INT AUTO_INCREMENT NOT NULL,
   `comentario` LONGTEXT NULL,
-  `estrelas` DECIMAL(1,1) NOT NULL,
+  `estrelas` DECIMAL(2,1) NOT NULL,
   `like` TINYINT NOT NULL,
   `dataAval` DATE NOT NULL,
   `idLivro` INT NOT NULL,
