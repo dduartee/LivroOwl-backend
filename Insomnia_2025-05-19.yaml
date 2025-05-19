@@ -7,14 +7,14 @@ meta:
 collection:
   - name: OpenLibraryAPI
     meta:
-      id: fld_e181b7e0d2e048d28aa2de3d71a9514d
+      id: fld_64bbc668b9b547eeab7df29877f28204
       created: 1747660493494
       modified: 1747660493494
       sortKey: -1747660493494
     children:
       - name: books
         meta:
-          id: fld_80443312956a4800b1f4b2e8361c4cb9
+          id: fld_c4b63a59a05d49bf90cb9df7d5c76358
           created: 1747660886747
           modified: 1747660886747
           sortKey: -1747660886747
@@ -22,7 +22,7 @@ collection:
           - url: http://openlibrary.org/api/books?bibkeys=OLID:OL30596255M&jscmd=data&format=json
             name: OL30596255M
             meta:
-              id: req_5c2b0bb684104c03acab6e7f41cd5256
+              id: req_7c834f43e5d74d28999a8707b8114a57
               created: 1747052900323
               modified: 1747660905114
               isPrivate: false
@@ -42,7 +42,7 @@ collection:
           - url: http://openlibrary.org/api/books?bibkeys=OLID:OL56973900M&jscmd=data&format=json
             name: OL56973900M
             meta:
-              id: req_a38cb328416946b496d527aec262da68
+              id: req_1053a3d5456c42c68a71e87191652542
               created: 1747660920041
               modified: 1747660922369
               isPrivate: false
@@ -62,7 +62,7 @@ collection:
           - url: http://openlibrary.org/api/books?bibkeys=OLID:OL38237993M&jscmd=data&format=json
             name: OL38237993M
             meta:
-              id: req_393a2dd9ae2849cfab5b1c5114d37ea0
+              id: req_07d57f3cf76442869252626a0b014a93
               created: 1747660935132
               modified: 1747660936403
               isPrivate: false
@@ -82,7 +82,7 @@ collection:
           - url: http://openlibrary.org/api/books?bibkeys=OLID:OL35963831M&jscmd=data&format=json
             name: OL35963831M
             meta:
-              id: req_1fe742066c1144f39ed2c267620841bc
+              id: req_5325f30657694f94a103ca664fb87672
               created: 1747660947023
               modified: 1747661013069
               isPrivate: false
@@ -99,10 +99,37 @@ collection:
                 send: true
                 store: true
               rebuildPath: true
+      - name: works
+        meta:
+          id: fld_227536501f984d2f893086ce0fa9cb71
+          created: 1747663531854
+          modified: 1747663535591
+          sortKey: -1747663531854
+        children:
+          - url: https://openlibrary.org/works/OL45804W.json
+            name: /works/OL45804W
+            meta:
+              id: req_d0fdb574b8944f5d893a9bd231782e41
+              created: 1747663541953
+              modified: 1747663560150
+              isPrivate: false
+              sortKey: -1747663560078
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
       - url: https://openlibrary.org/people/mekBot/books/want-to-read.json
         name: want to read
         meta:
-          id: req_53944f4d045d49008b570a5d3fbe2f67
+          id: req_ee3bb9af7f3349cf9238d5fab44302d6
           created: 1747052927257
           modified: 1747660497017
           isPrivate: false
@@ -122,7 +149,7 @@ collection:
       - url: https://openlibrary.org/authors/OL23919A.json
         name: author
         meta:
-          id: req_f85fbec908d04e88846903de0702afae
+          id: req_75115ad8e3254d90978f366bb151bb4f
           created: 1747053091902
           modified: 1747660499787
           isPrivate: false
@@ -139,16 +166,36 @@ collection:
             send: true
             store: true
           rebuildPath: true
+      - url: http://openlibrary.org/people/george08/lists.json
+        name: lists
+        meta:
+          id: req_1b87fdfbe7e34b72b13e788af8797eda
+          created: 1747662649291
+          modified: 1747663509978
+          isPrivate: false
+          sortKey: -1747662649291
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
   - name: API
     meta:
-      id: fld_1d9c4f5a291645ee8134deb72b312ace
+      id: fld_3fb493babb104dc9b8dfaa0c45cdd084
       created: 1747660587899
       modified: 1747660625296
       sortKey: -1747660587899
     children:
       - name: Cadastrar Livro
         meta:
-          id: fld_b99fac7bf6e0493f9324dfb7bb829b33
+          id: fld_c86b45f8894640c48e7e5082848f4a5e
           created: 1747660598526
           modified: 1747660986048
           sortKey: -1747660603112
@@ -156,7 +203,7 @@ collection:
           - url: http://localhost/api/cadLivro.php
             name: Exemplo
             meta:
-              id: req_e92679525cfc428fb7aa638b789d6010
+              id: req_4d48b26b38474bcb9fb1d166cc262904
               created: 1747657453412
               modified: 1747660659140
               isPrivate: false
@@ -212,7 +259,7 @@ collection:
           - url: http://localhost/api/cadLivro.php
             name: On Grand Strategy
             meta:
-              id: req_9d2f72b9e6a944c389937f31f37edec6
+              id: req_2d5bc51207f74eaf8c7ba05e67ca1de8
               created: 1747660757353
               modified: 1747660791955
               isPrivate: false
@@ -322,7 +369,7 @@ collection:
           - url: http://localhost/api/cadLivro.php
             name: La generazione ansiosa
             meta:
-              id: req_19e227a854c44842ac4413f66c5bb89d
+              id: req_cd2899265662446a9d012676124fa907
               created: 1747660965131
               modified: 1747660972943
               isPrivate: false
@@ -395,7 +442,7 @@ collection:
           - url: http://localhost/api/cadLivro.php
             name: The Food Lab Lib/E
             meta:
-              id: req_f4077e996d664685927f1db7a9c764dc
+              id: req_ba65ebd36a174e7eb051bcbe9f9dee81
               created: 1747660993348
               modified: 1747660998440
               isPrivate: false
@@ -502,7 +549,7 @@ collection:
           - url: http://localhost/api/cadLivro.php
             name: Complete Vegetarian Cookbook
             meta:
-              id: req_5c480c97fe5f45e5ae3cf3299ce0f7bf
+              id: req_800fe047cc3640bda9d41a332fd06378
               created: 1747661021921
               modified: 1747661027387
               isPrivate: false
@@ -567,7 +614,7 @@ collection:
               rebuildPath: true
       - name: Cadastrar Avaliacao
         meta:
-          id: fld_e6bfda5a883f4ae1a18b616d8e28a31a
+          id: fld_586294edadf847ea9b21f1b23adf1b2e
           created: 1747660619113
           modified: 1747660619113
           sortKey: -1747660619113
@@ -575,7 +622,7 @@ collection:
           - url: http://localhost/api/cadAvaliacao.php
             name: idLivro 1 4.5 estrelas
             meta:
-              id: req_5d51bb1cb4db4cf2bf92a5641a75eb6b
+              id: req_61fabee493e940b9ad5d1c5549087a8a
               created: 1747660031165
               modified: 1747661467772
               isPrivate: false
@@ -607,7 +654,7 @@ collection:
           - url: http://localhost/api/cadAvaliacao.php
             name: idLivro 1 3 estrelas
             meta:
-              id: req_44504cd18cfe4a2fb0a74fa57ed220d2
+              id: req_82983096e4314a01833cfbdf5bebb80d
               created: 1747660700386
               modified: 1747661348573
               isPrivate: false
@@ -639,7 +686,7 @@ collection:
           - url: http://localhost/api/cadAvaliacao.php
             name: idLivro 1 5 estrelas
             meta:
-              id: req_42452745562e4b30a87d9c427d929a6e
+              id: req_d248954a73a347be837be9fae69f710e
               created: 1747660720985
               modified: 1747661354406
               isPrivate: false
@@ -671,7 +718,7 @@ collection:
           - url: http://localhost/api/cadAvaliacao.php
             name: idLivro 1 5 estrelas
             meta:
-              id: req_f542880227004455a0b57745146f2d16
+              id: req_ee624d06b66741feb9e333da2b9e501e
               created: 1747661293350
               modified: 1747661377857
               isPrivate: false
@@ -703,7 +750,7 @@ collection:
           - url: http://localhost/api/cadAvaliacao.php
             name: idLivro 1 5 estrelas
             meta:
-              id: req_e585fd55d3954b83884decc4d17be133
+              id: req_475611b3c81b4716aaf0b340bb5659c7
               created: 1747661356976
               modified: 1747661361809
               isPrivate: false
@@ -735,7 +782,7 @@ collection:
           - url: http://localhost/api/cadAvaliacao.php
             name: idLivro 1 5 estrelas
             meta:
-              id: req_29c25f5e46dd497c961fd3bce5de7225
+              id: req_7d71f20ef012414cb038da3173ddc46f
               created: 1747661387779
               modified: 1747661389032
               isPrivate: false
@@ -767,7 +814,7 @@ collection:
           - url: http://localhost/api/cadAvaliacao.php
             name: idLivro 1 5 estrelas
             meta:
-              id: req_417ea7627a7a49d2a82f0084b6151109
+              id: req_fe128f43fc5d4979a50fcfff70462f89
               created: 1747661395256
               modified: 1747661396821
               isPrivate: false
@@ -799,7 +846,7 @@ collection:
           - url: http://localhost/api/cadAvaliacao.php
             name: idLivro 1 5 estrelas
             meta:
-              id: req_69858054cf0f436f85d52bbe9bbd4753
+              id: req_d9ec2879b69449ccb932036cb87b8268
               created: 1747661404785
               modified: 1747661407201
               isPrivate: false
@@ -831,7 +878,7 @@ collection:
           - url: http://localhost/api/cadAvaliacao.php
             name: idLivro 1 5 estrelas
             meta:
-              id: req_ce081f5ed7f54d65b34e302118adab64
+              id: req_7631fe55f4fa4b74a11af452a5cf4c35
               created: 1747661414671
               modified: 1747661415566
               isPrivate: false
@@ -863,7 +910,7 @@ collection:
           - url: http://localhost/api/cadAvaliacao.php
             name: idLivro 1 5 estrelas
             meta:
-              id: req_20fb9fa795ee47b6b492329fc10fe249
+              id: req_3b0e093f8c154b7d814c13f9c53c6381
               created: 1747661422017
               modified: 1747661423109
               isPrivate: false
@@ -894,7 +941,7 @@ collection:
               rebuildPath: true
       - name: Consultar Avaliacao
         meta:
-          id: fld_03d889e737ed4e63ab1b35a380ac4d7c
+          id: fld_e86152a67c3447d9a25eb5c08a8ce44e
           created: 1747660635726
           modified: 1747660637554
           sortKey: -1747660619213
@@ -902,7 +949,7 @@ collection:
           - url: http://localhost/api/conAvaliacao.php
             name: conAvaliacao
             meta:
-              id: req_ffe77df0152b456bb17a4e48dbd3f941
+              id: req_fc53cfb7c58b45afb269ac00665d3434
               created: 1747660451667
               modified: 1747661453320
               isPrivate: false
