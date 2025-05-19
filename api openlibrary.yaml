@@ -1,0 +1,80 @@
+type: collection.insomnia.rest/5.0
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1725455486863
+  modified: 1725455486863
+collection:
+  - url: http://openlibrary.org/api/books?bibkeys=OLID:OL30596255M&jscmd=data&format=json
+    name: books
+    meta:
+      id: req_947288c93e0f4250af99935a5d9cafa6
+      created: 1747052900323
+      modified: 1747054415441
+      isPrivate: false
+      sortKey: -1747052900324
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/9.3.3
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: https://openlibrary.org/people/mekBot/books/want-to-read.json
+    name: want to read
+    meta:
+      id: req_d3a98252ce864afa9425403ee904ef32
+      created: 1747052927257
+      modified: 1747052936374
+      isPrivate: false
+      sortKey: -1747052927258
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/9.3.3
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: https://openlibrary.org/authors/OL23919A.json
+    name: author
+    meta:
+      id: req_6395d142b0544b8c81e74870c76bde4f
+      created: 1747053091902
+      modified: 1747053096428
+      isPrivate: false
+      sortKey: -1747052900274
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/9.3.3
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1747052878979
+    modified: 1747052878979
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1747052878797
+    modified: 1747052878797
+    isPrivate: false
