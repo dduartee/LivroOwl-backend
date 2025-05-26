@@ -15,15 +15,17 @@ $input = json_decode(file_get_contents('php://input'), true);
 $idLivro     = isset($input['idLivro']) ? intval($input['idLivro']) : 0;
 $comentario  = isset($input['comentario']) ? trim($input['comentario']) : '';
 
-// SQL base
+// SQL base com JOIN
 $sql = "SELECT 
-            idAvaliacao,
-            comentario,
-            estrelas,
-            `like`,
-            dataAval,
-            idLivro
-        FROM Avaliacao
+            a.idAvaliacao,
+            a.comentario,
+            a.estrelas,
+            a.`like` AS liked,
+            UNIX_TIMESTAMP(a.dataAval) * 1000 AS timestamp_avaliado,
+            a.idLivro,
+            l.nome AS nomeLivro
+        FROM Avaliacao a
+        JOIN Livro l ON a.idLivro = l.idLivro
         WHERE 1=1";
 
 // Filtros dinâmicos
@@ -31,13 +33,13 @@ $params = [];
 $types = '';
 
 if ($idLivro > 0) {
-    $sql .= " AND idLivro = ?";
+    $sql .= " AND a.idLivro = ?";
     $params[] = $idLivro;
     $types .= 'i';
 }
 
 if (!empty($comentario)) {
-    $sql .= " AND LOWER(comentario) LIKE LOWER(?)";
+    $sql .= " AND LOWER(a.comentario) LIKE LOWER(?)";
     $params[] = '%' . $comentario . '%';
     $types .= 's';
 }
@@ -63,9 +65,10 @@ if ($result->num_rows > 0) {
         "idAvaliacao" => 0,
         "comentario" => "",
         "estrelas" => 0,
-        "like" => 0,
-        "dataAval" => "",
-        "idLivro" => 0
+        "liked" => false,
+        "timestamp_avaliado" => 0,
+        "idLivro" => 0,
+        "nomeLivro" => ""
     ];
 }
 

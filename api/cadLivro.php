@@ -22,10 +22,12 @@ $firstKey = array_key_first($jsonData);
 $livroData = $jsonData[$firstKey];
 
 // Extrai os dados principais
-$titulo = trim($livroData['title'] ?? '');
-$isbn = $livroData['identifiers']['isbn_13'][0] ?? null;
-$anoPub = substr($livroData['publish_date'] ?? '', -4); // Extrai o ano do final
-$urlCover = trim($livroData['url'] ?? '');
+$titulo = trim($jsonData['nome'] ?? '');
+$autor = $jsonData['autor'] ?? '';
+$genero = $jsonData['genero'] ?? '';
+$isbn = '0000000000000'; // coloque um valor padrão ou gere
+$anoPub = '2020';
+$urlCover = trim($livroData['coverURL'] ?? '');
 
 if (empty($titulo) || empty($isbn) || empty($anoPub)) {
     echo json_encode(['success' => false, 'message' => 'Campos obrigatórios do livro ausentes.']);

@@ -56,9 +56,20 @@ if (!$stmt) {
 $stmt->bind_param("isdisi", $idAvaliacao, $comentario, $estrelas, $like, $dataAval, $idLivro);
 
 if ($stmt->execute()) {
-    echo json_encode(['success' => true, 'message' => 'Avaliação cadastrada com sucesso!']);
+    // Converter data para timestamp
+    $timestampAvaliado = strtotime($dataAval);
+
+    echo json_encode([
+        'success' => true,
+        'message' => 'Avaliação cadastrada com sucesso!',
+        'id' => $idAvaliacao,
+        'timestamp_avaliado' => $timestampAvaliado
+    ]);
 } else {
-    echo json_encode(['success' => false, 'message' => 'Erro ao inserir avaliação: ' . $stmt->error]);
+    echo json_encode([
+        'success' => false,
+        'message' => 'Erro ao inserir avaliação: ' . $stmt->error
+    ]);
 }
 
 $stmt->close();
