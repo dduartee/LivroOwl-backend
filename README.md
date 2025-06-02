@@ -1,3 +1,1 @@
-# php-mvc
-Projeto de loja ecommerce com arquitetura mvc
-
+# API para o aplicativo LivroOwl de avaliação de livros pela api da OpenLibrary
