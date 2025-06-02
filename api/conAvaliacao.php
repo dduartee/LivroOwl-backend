@@ -58,7 +58,13 @@ $response = [];
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        $response[] = array_map(fn($val) => mb_convert_encoding($val, 'UTF-8', 'ISO-8859-1'), $row);
+        while ($row = $result->fetch_assoc()) {
+            $row['liked'] = ($row['liked'] == 1); // converte para booleano verdadeiro/falso
+            foreach ($row as $key => $val) {
+                $row[$key] = is_string($val) ? mb_convert_encoding($val, 'UTF-8', 'ISO-8859-1') : $val;
+            }
+            $response[] = $row;
+        }
     }
 } else {
     $response[] = [
@@ -71,7 +77,6 @@ if ($result->num_rows > 0) {
         "nomeLivro" => ""
     ];
 }
-
 // Saída JSON
 header('Content-Type: application/json; charset=utf-8');
 echo json_encode($response);

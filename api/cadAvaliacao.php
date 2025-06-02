@@ -23,8 +23,8 @@ if (!$jsonInput) {
 // Extrair campos
 $comentario = trim($jsonInput['comentario'] ?? '');
 $estrelas   = floatval($jsonInput['estrelas'] ?? 0);
-$like       = intval($jsonInput['like'] ?? 0);
-$dataAval   = !empty($jsonInput['dataAval']) ? date('Y-m-d', strtotime($jsonInput['dataAval'])) : null;
+$like       = intval($jsonInput['liked'] ?? 0);
+$dataAval   = !empty($jsonInput['timestamp_avaliado']) ? date('Y-m-d', strtotime($jsonInput['timestamp_avaliado'])) : null;
 $idLivro    = intval($jsonInput['idLivro'] ?? 0);
 
 // Validar campos obrigatórios

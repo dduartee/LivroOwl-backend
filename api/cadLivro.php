@@ -17,20 +17,17 @@ if (!$jsonData || !is_array($jsonData)) {
     exit;
 }
 
-// Assumimos apenas um livro por vez
-$firstKey = array_key_first($jsonData);
-$livroData = $jsonData[$firstKey];
-
-// Extrai os dados principais
+// Dados do livro diretamente do JSON
 $titulo = trim($jsonData['nome'] ?? '');
-$autor = $jsonData['autor'] ?? '';
-$genero = $jsonData['genero'] ?? '';
-$isbn = '0000000000000'; // coloque um valor padrão ou gere
-$anoPub = '2020';
-$urlCover = trim($livroData['coverURL'] ?? '');
+$autor = trim($jsonData['autor'] ?? '');
+$genero = trim($jsonData['genero'] ?? '');
+$isbn = '0000000000000'; // Valor padrão
+$anoPub = trim($jsonData['publish_date'] ?? '');
+$urlCover = trim($jsonData['coverURL'] ?? '');
 
-if (empty($titulo) || empty($isbn) || empty($anoPub)) {
-    echo json_encode(['success' => false, 'message' => 'Campos obrigatórios do livro ausentes.']);
+// Validação de campos obrigatórios
+if (empty($titulo) || empty($anoPub) || empty($urlCover)) {
+    echo json_encode(['success' => false, 'message' => 'Campos obrigatórios do livro ausentes.', 'json' => json_encode($jsonData) ]);
     exit;
 }
 
