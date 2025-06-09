@@ -23,7 +23,8 @@ $sql = "SELECT
             a.`like` AS liked,
             UNIX_TIMESTAMP(a.dataAval) * 1000 AS timestamp_avaliado,
             a.idLivro,
-            l.nome AS nomeLivro
+            l.nome AS nomeLivro,
+            l.urlCover AS urlCover
         FROM Avaliacao a
         JOIN Livro l ON a.idLivro = l.idLivro
         WHERE 1=1";
@@ -74,7 +75,8 @@ if ($result->num_rows > 0) {
         "liked" => false,
         "timestamp_avaliado" => 0,
         "idLivro" => 0,
-        "nomeLivro" => ""
+        "nomeLivro" => "",
+        "urlCover" => ""
     ];
 }
 // Saída JSON
